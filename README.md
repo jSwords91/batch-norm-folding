@@ -14,14 +14,6 @@ $$
 
 This transformation is just a **per-feature scale and shift**. Therefore, we can **fold it into the weights and bias of the preceding `Linear` layer**, eliminating the BatchNorm layer entirely at inference time.
 
-In fact, the above expression can be rewritten as:
-
-$$
-\text{BN}(z) =
-\underbrace{\left( \frac{\gamma}{\sqrt{\sigma^2 + \epsilon}} \right)}_{\text{scale}} \cdot z + 
-\underbrace{\left( \beta - \frac{\gamma \cdot \mu}{\sqrt{\sigma^2 + \epsilon}} \right)}_{\text{bias}}
-$$
-
 ---
 
 ## What This Project Does
