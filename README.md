@@ -49,14 +49,16 @@ $$
 Then fold the BatchNorm into the Linear layer as:
 
 - **New weights:**
-  $$
-  W_{\text{folded}} = \text{scale} \cdot W
-  $$
+
+$$
+W_{\text{folded}} = \text{scale} \cdot W
+$$
 
 - **New biases:**
-  $$
-  b_{\text{folded}} = \text{scale} \cdot (b - \mu) + \beta
-  $$
+
+$$
+b_{\text{folded}} = \text{scale} \cdot (b - \mu) + \beta
+$$
 
 This produces a new `Linear` layer that behaves identically to `Linear → BatchNorm`, allowing the BatchNorm layer to be safely removed.
 
